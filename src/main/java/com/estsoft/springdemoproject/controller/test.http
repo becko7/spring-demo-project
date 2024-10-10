@@ -14,7 +14,7 @@ POST http://localhost:8080/lecture/course?title=spring-jpa&instructorId=1&capaci
 Content-Type: application/json
 
 
-### save lectureCourse
+### get post list
 GET http://localhost:8080/post/list
 Content-Type: application/json
 
@@ -28,4 +28,13 @@ Content-Type: application/json
   "userId" : 1,
   "title" : "게시글테스트예요",
   "content" : "게시글의 본문 내용을 입력하시면 됩니다. test \n 게시글의 본문 내용을 입력하시면 됩니다. test 게시글의 본문 내용을 입력하시면 됩니다. test"
+}
+
+### save comment
+POST http://localhost:8080/comment
+Content-Type: application/json
+
+{
+  "postId" : 1,
+  "content" : "댓글6 hahaha"
 }

@@ -1,22 +1,24 @@
 package com.estsoft.springdemoproject.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "comments")
+@Getter
+@Setter
 public class Comment {
-    // select * from comments where id = 1
-    // Comment comment = commentRepository.findById(1);
-    // comment.getPost()
-    // => SELECT * FROM posts WHERE id = (SELECT post_id FROM comments WHERE id = 1)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
+    @JsonBackReference
     private Post post;
 
     @Column(name = "user_id")
