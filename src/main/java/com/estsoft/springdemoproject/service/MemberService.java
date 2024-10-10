@@ -21,8 +21,13 @@ public class MemberService {
         // SELECT * FROM member;
     }
 
+    public Member getMemberById(Long id) {
+        return repository.findById(id).orElse(null);
+        // SELECT * FROM member;
+        //'김종화' -> '김*화'
+    }
+
     public Member saveMember(Member member) {
         return repository.save(member);
     }
-
 }

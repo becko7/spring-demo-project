@@ -1,6 +1,5 @@
 package com.estsoft.springdemoproject.controller;
 
-import com.estsoft.example.HiService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
