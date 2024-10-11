@@ -2,12 +2,9 @@
 GET http://localhost:8080/student/1
 Content-Type: application/json
 
-
 ### save Student
 POST http://localhost:8080/student?name=hani&age=20
 Content-Type: application/json
-
-
 
 ### save lectureCourse
 POST http://localhost:8080/lecture/course?title=spring-jpa&instructorId=1&capacity=30&from=2024-10-10&to=2024-10-11
@@ -18,6 +15,10 @@ Content-Type: application/json
 GET http://localhost:8080/post/list
 Content-Type: application/json
 
+### get post list
+GET http://localhost:8080/post/1
+Content-Type: application/json
+
 
 ### save post
 POST http://localhost:8080/post
@@ -26,7 +27,7 @@ Content-Type: application/json
 {
   "categoryId" : 1,
   "userId" : 1,
-  "title" : "게시글테스트예요",
+  "title" : "44444",
   "content" : "게시글의 본문 내용을 입력하시면 됩니다. test \n 게시글의 본문 내용을 입력하시면 됩니다. test 게시글의 본문 내용을 입력하시면 됩니다. test"
 }
 
@@ -35,6 +36,10 @@ POST http://localhost:8080/comment
 Content-Type: application/json
 
 {
-  "postId" : 1,
-  "content" : "댓글6 hahaha"
+  "postId" : 4,
+  "content" : " hahaha"
 }
+
+### most comment
+GET http://localhost:8080/most/commented
+Content-Type: application/json

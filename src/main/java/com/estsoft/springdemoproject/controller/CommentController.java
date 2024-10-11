@@ -18,4 +18,9 @@ public class CommentController {
         commentService.createComment(request);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/most/commented")
+    public List<Object[]> getMostCommentPost() {
+        return commentService.getMostCommentPost();
+    }
 }

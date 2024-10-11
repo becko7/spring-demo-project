@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -42,5 +43,9 @@ public class CommentService {
         comment.setDeletedAt(LocalDateTime.now());
 
         commentRepository.save(comment);
+    }
+
+    public List<Object[]> getMostCommentPost() {
+        return commentRepository.findCommentCountByPost();
     }
 }
